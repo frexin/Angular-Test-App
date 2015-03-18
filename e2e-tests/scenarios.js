@@ -1,41 +1,38 @@
 'use strict';
 
-/* https://github.com/angular/protractor/blob/master/docs/toc.md */
-
 describe('my app', function() {
 
   browser.get('index.html');
 
   it('should automatically redirect to /woodList when location hash/fragment is empty', function() {
-    expect(browser.getLocationAbsUrl()).toMatch("/woodList");
+    expect(browser.getLocationAbsUrl()).toMatch("/list");
   });
 
 
   describe('woodList', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/woodList');
+      browser.get('index.html#/list');
     });
 
 
-    it('should render woodList when user navigates to /woodList', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+    it('should render woodList when user navigates to /list', function() {
+      expect(element.all(by.css('[ng-view] li.wood-item')).first())
     });
 
   });
 
 
-  describe('view2', function() {
+  describe('woodDetails', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/view2');
+      browser.get('index.html#/wood/1');
     });
 
 
-    it('should render view2 when user navigates to /view2', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
+    it('should render woodDetails when user navigates to /wood/1', function() {
+      expect(element.all(by.css('[ng-view] h1')).first().getText()).
+        toMatch(/Wood/);
     });
 
   });

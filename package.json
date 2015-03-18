@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "description": "Angular Test Application",
   "repository": "https://github.com/frexin/Angular-Test-App",
+  "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",
     "protractor": "^1.1.1",
