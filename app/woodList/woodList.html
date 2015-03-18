@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="page-header">
+            <h1>Woods List</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <!--Sidebar content-->
+
+            Search: <input ng-model="query">
+            Sort by:
+            <!--<select ng-model="orderProp">-->
+                <!--<option value="name">Alphabetical</option>-->
+                <!--<option value="age">Newest</option>-->
+            <!--</select>-->
+
+        </div>
+        <div class="col-md-10">
+
+            <ul class="woods">
+                <li ng-repeat="wood in woods | filter:query" class="">
+                    <a href="#/wood/{{wood.id}}" class="thumb"><img src="http://placehold.it/150x150"></a>
+                    <a href="#/wood/{{wood.id}}">{{wood.name}}</a>
+                    <p>{{wood.description}}</p>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>

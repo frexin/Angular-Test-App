@@ -10,16 +10,14 @@
 
 </head>
 <body>
-<ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-</ul>
-
-<div ng-view></div>
-
+<div ng-view id="container"></div>
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="app.js"></script>
-<script src="view1/view1.js"></script>
+<script src="api.js"></script>
+<script src="woodList/woodList.js"></script>
+<script src="woodInfo/woodInfo.js"></script>
 </body>
 </html>

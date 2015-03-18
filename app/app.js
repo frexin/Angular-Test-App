@@ -1,9 +1,11 @@
 'use strict';
 
 angular.module('testApp', [
-  'ngRoute',
-  'testApp.view1'
+  'ngRoute', 'apiService',
+  'testApp.woodInfo',
+  'testApp.woodList'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.
+  otherwise({redirectTo: '/list'});
 }]);
