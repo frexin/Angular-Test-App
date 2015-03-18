@@ -5,27 +5,57 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-2">
-            <!--Sidebar content-->
+        <div class="col-md-3">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="search" class="col-sm-2 control-label">Search</label>
 
-            Search: <input ng-model="query">
-            Sort by:
-            <!--<select ng-model="orderProp">-->
-                <!--<option value="name">Alphabetical</option>-->
-                <!--<option value="age">Newest</option>-->
-            <!--</select>-->
+                    <div class="col-sm-10">
+                        <input type="text" ng-model="search.$" class="form-control" id="search"
+                               placeholder="Search text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="material" class="col-sm-2 control-label">Material</label>
 
+                    <div class="col-sm-10">
+                        <select ng-model="search.material" id="material" class="form-control">
+                            <option value="">Any</option>
+                            <option value="ash">ash</option>
+                            <option value="beech">beech</option>
+                            <option value="oak">oak</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="color" class="col-sm-2 control-label">Color</label>
+
+                    <div class="col-sm-10">
+                        <select ng-model="search.color" id="color" class="form-control">
+                            <option value="">Any</option>
+                            <option value="light-brown">Light Brown</option>
+                            <option value="dark-brown">Dark Brown</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="color" class="col-sm-2 control-label">Price</label>
+
+                    <div class="col-sm-10">
+                        <input type="range" id="price" ng-model="search.price"/>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="col-md-10">
-
+        <div class="col-md-9">
             <ul class="woods">
-                <li ng-repeat="wood in woods | filter:query" class="">
+                <li ng-repeat="wood in woods | filter:search" class="">
                     <a href="#/wood/{{wood.id}}" class="thumb"><img src="http://placehold.it/150x150"></a>
                     <a href="#/wood/{{wood.id}}">{{wood.name}}</a>
+
                     <p>{{wood.description}}</p>
                 </li>
             </ul>
-
         </div>
     </div>
 </div>
