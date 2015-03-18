@@ -13,7 +13,8 @@ angular.module('testApp.woodList', ['ngRoute'])
     function($scope, $routeParams, Wood) {
         $scope.woods = Wood.query();
 
-//        $scope.setImage = function(imageUrl) {
-//            $scope.mainImageUrl = imageUrl;
-//        }
+        $scope.range = {
+            min : 5000,
+            max : 20000
+        };
 }]);
